@@ -81,12 +81,18 @@ local lock_plugins = {
 	"p00f/nvim-ts-rainbow",
 
 
-	"spinks/vim-leader-guide",                     -- Show leader commands
 	"JoosepAlviste/nvim-ts-context-commentstring", -- What comment use based on context (for files with two comments)
 	"akinsho/toggleterm.nvim",                     -- Crtrl + / Opens terminal
 	"nvim-lualine/lualine.nvim",                   -- Better bottom line
 
 
+	{
+		"folke/which-key.nvim", -- Show leader commands
+		event = "VeryLazy",
+		-- config = function()
+		-- 	require("which-key").setup()
+		-- end
+	},
 	{
 		"nvim-tree/nvim-tree.lua", -- Nerdtree
 		config = function()

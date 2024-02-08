@@ -34,7 +34,7 @@ plugins.config.plugins = {
 
 -- Add more options if you want
 plugins.config.lazy_config = {
-	lazy = false -- Lazy load plugins (Load plugins after nvim open)
+	lazy = false, -- Lazy load plugins (Load plugins after nvim open)
 }
 
 
@@ -51,9 +51,10 @@ require("user.config.treesitter")
 require("user.config.toggleterm")
 require("user.config.bufferline")
 require("user.config.lualine")
+require("user.config.whichkey")
 
 -- Use colorscheme
 -- Add a second argument for background opacity (e.g. setColorScheme(colorscheme, 80))
 -- If termgui is enabled, opacity is set by terminal
-require("user.colorscheme").setColorScheme(colorscheme)
+require("user.colorscheme").setColorScheme(colorscheme, 80)
 
