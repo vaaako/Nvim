@@ -8,15 +8,15 @@ Uses **Lazy** for plugin manager along with various plugins such as **LSP**,
  **Mason**, and **Treesitter** for enhanced functionality
 
 ## Some Plugins
-- Auto closing with (nvim-autopairs)[https://github.com/windwp/nvim-autopairs]
-- Nerd icons with (nvim-web-devicons)[https://github.com/nvim-tree/nvim-web-devicons]
-- File browsing with (nvim-tree)[https://github.com/nvim-tree/nvim-tree.lua]
-- File searching with (telescope.nvim)[https://github.com/nvim-telescope/telescope.nvim]
-- Built in terminal with (togleterm.nvim)[https://github.com/akinsho/toggleterm.nvim]
-- Git info with (gitsigns.nvim)[https://github.com/lewis6991/gitsigns.nvim]
-- Autocompletion with (nvim-cmp)[https://github.com/hrsh7th/nvim-cmp]
-- Better syntax highlighting with (nvim-treesitter)[https://github.com/nvim-treesitter/nvim-treesitter]
-- **LSP** configuration with (nvim-lspconfig)[https://github.com/neovim/nvim-lspconfig] and (mason.nvim)[https://github.com/williamboman/mason.nvim]
+- Auto closing with [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
+- Nerd icons with [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
+- File browsing with [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+- File searching with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- Built in terminal with [togleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
+- Git info with [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
+- Autocompletion with [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
+- Better syntax highlighting with [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- **LSP** configuration with [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) and [mason.nvim](https://github.com/williamboman/mason.nvim)
 
 
 # Install
