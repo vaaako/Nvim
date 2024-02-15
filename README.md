@@ -75,6 +75,12 @@ These are not all the commands, just the basic ones
 - **Shift + K**: Shows definition of a function
 - **Ctrl + /**: Opens a terminal inside **neovim**
 
+## LSP
+- **gl**: Show line full error message
+- **gf**: Go to the file of the file path under cursor
+- **gD**: Go to the declaration of the file path under cursor
+- **Shift + K**: Show information of a method/object under cursor
+
 ## Leader
 Youo can see all *Leader Commands* by pressing `<leader>` and waiting a bit
 
