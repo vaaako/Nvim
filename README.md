@@ -57,6 +57,8 @@ Leader key: **Space**
 
 These are not all the commands, just the basic ones
 
+You can also press a keybind *(e.g. `g`)*, wait a bit, and see all possible keybinds like `gl`, `gD` etc.
+
 ## Completion Navigation
 - **Enter**: Confirms selection
 - **Ctrl + [j | k]**: Moves up and down between snippets
@@ -78,11 +80,12 @@ These are not all the commands, just the basic ones
 ## LSP
 - **gl**: Show line full error message
 - **gf**: Go to the file of the file path under cursor
-- **gD**: Go to the declaration of the file path under cursor
+- **gD**: Go to the method/object declaration under the cursor
 - **Shift + K**: Show information of a method/object under cursor
 
 ## Leader
 Youo can see all *Leader Commands* by pressing `<leader>` and waiting a bit
+
 
 >Buffer is a tab
 
