@@ -5,7 +5,7 @@ end
 
 treesitter.setup({
 	-- ensure_installed = "maintainers", -- "all" For all langues, "maintained" For parsers with maintainers
-	ensure_installed = { "c", "cpp", "lua", "python" },
+	ensure_installed = { "c", "cpp", "lua", "typescript", "javascript", "python", "comment" }, -- Comment: Highlight TODO
 	sync_install = false, -- Install languages synchronously (only applied to "ensure_installed")
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {

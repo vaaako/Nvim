@@ -25,6 +25,13 @@ local mappings = {
 		s    = "Selection"
 	},
 
+	b = {
+		name = "+buffer",
+		n    = "Move to the right",
+		p    = "Move to the left",
+		f    = "Pin buffer"
+	},
+
 	-- LSP Commands
 	["l"] = "which_key_ignore"
 }

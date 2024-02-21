@@ -6,6 +6,8 @@ local colorscheme = "dracula"
 
 local plugins = require("user.plugins")
 plugins.config.plugins = {
+	-- Miscellaneous
+	"xiyaowong/nvim-cursorword", -- Highlight match words under cursor
 	{
 		"kylechui/nvim-surround",
 		version = "*",
@@ -13,6 +15,20 @@ plugins.config.plugins = {
 			require("nvim-surround").setup()
 		end
 	},
+
+	{
+		"folke/todo-comments.nvim", -- Highlight TODO, WARNING, FIXME etc
+		dependencies = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({
+				highlight = {
+					-- pattern = [[.*<(KEYWORDS)\s*:]] -- Match: " KEYWORD: "
+					pattern = [[.*<(KEYWORDS)\s*]]   -- Match: " KEYWORD "
+				}
+			})
+		end,
+	},
+
 
 	-- Colorschemes
 	"folke/tokyonight.nvim",
@@ -34,7 +50,7 @@ plugins.config.plugins = {
 
 -- Add more options if you want
 plugins.config.lazy_config = {
-	lazy = false, -- Lazy load plugins (Load plugins after nvim open)
+	lazy = true, -- Lazy load plugins (Load plugins after nvim open)
 }
 
 

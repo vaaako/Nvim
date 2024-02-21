@@ -52,10 +52,10 @@ keymap("n", "<leader>q", ":bdelete<cr>", opts) -- Quit
 -- If you want to barbar.nvim
 -- keymap("n", "<leader>q", ":BufferClose<cr>", opts) -- Quit
 -- keymap("n", "<leader>br", ":BufferRestore<cr>", opts)
--- keymap("n", "<leader>bn", ":BufferMoveNext<CR>", opts)
--- keymap("n", "<leader>bp", ":BufferMovePrevious<CR>", opts)
--- keymap("n", "<leader>bf", ":BufferPin<CR>", opts)
 -- keymap("n", "<leader>bq", ":BufferClose<cr>", opts) -- Quit
+keymap("n", "<leader>bn", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "<leader>bp", ":BufferLineMovePrev<CR>", opts)
+keymap("n", "<leader>bf", ":BufferLineTogglePin<CR>", opts) -- Pin
 
 
 -- Telescope --
