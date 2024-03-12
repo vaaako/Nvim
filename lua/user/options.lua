@@ -1,5 +1,5 @@
 -- :help options
-local lock_options = {
+local opt_lock_options = {
 	-- Backup
 	backup      = false,         -- Make backup file
 	swapfile    = false,         -- Make a swap file
@@ -61,12 +61,21 @@ local lock_options = {
 
 	-- Behaviour
 	undofile       = true,  -- Enable persistent undo
-
 }
 
+local g_lock_options = {
+	-- Ignore python style (ident)
+	python_recommended_style = 0
+}
+
+
 -- Enable all options
-for k, v in pairs(lock_options) do
+for k, v in pairs(opt_lock_options) do
 	vim.opt[k] = v
+end
+
+for k, v in pairs(g_lock_options) do
+	vim.g[k] = v
 end
 
 

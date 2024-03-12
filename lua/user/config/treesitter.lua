@@ -5,7 +5,10 @@ end
 
 treesitter.setup({
 	-- ensure_installed = "maintainers", -- "all" For all langues, "maintained" For parsers with maintainers
-	ensure_installed = { "c", "cpp", "lua", "typescript", "javascript", "python", "comment" }, -- Comment: Highlight TODO
+
+	-- Add more servers here, search with :TSInstallInfo
+	ensure_installed = { "c", "cpp", "lua", "markdown", "typescript", "javascript", "python" },
+
 	sync_install = false, -- Install languages synchronously (only applied to "ensure_installed")
 	ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
@@ -13,15 +16,18 @@ treesitter.setup({
 		disable = { "" }, -- List of language that will be disabled
 		additional_vim_regex_highlighting = true,
 	},
-	-- indent = { enable = true, disable = { "yaml" } },
+	indent = {
+		enable = true,
+		-- disable = { "yaml" } -- Disabled auto indent
+	},
 
 	-- Enable rainbow parentheses
 	-- See: https://github.com/p00f/nvim-ts-rainbow
 	rainbow = {
 		enable = true,
-		-- disable = { }
 		extended_mode = true, -- Highlight non-brackets delimiters like HTML tags
 		max_file_lines = nil  -- Do not enable for files with more than n lines
+		-- disable = { }
 		-- colors = {}
 		-- termcolors = {}
 	}

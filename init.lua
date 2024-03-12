@@ -6,8 +6,10 @@ local colorscheme = "dracula"
 
 local plugins = require("user.plugins")
 plugins.config.plugins = {
-	-- Miscellaneous
-	"xiyaowong/nvim-cursorword", -- Highlight match words under cursor
+	{
+		"xiyaowong/nvim-cursorword", -- Highlight match words under cursor
+	},
+
 	{
 		"kylechui/nvim-surround",
 		version = "*",
@@ -16,19 +18,24 @@ plugins.config.plugins = {
 		end
 	},
 
+	-- WARNING -- This plugins slows the loading time
 	{
 		"folke/todo-comments.nvim", -- Highlight TODO, WARNING, FIXME etc
+		event = "VeryLazy",
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("todo-comments").setup({
 				highlight = {
 					-- pattern = [[.*<(KEYWORDS)\s*:]] -- Match: " KEYWORD: "
 					pattern = [[.*<(KEYWORDS)\s*]]   -- Match: " KEYWORD "
+				},
+
+				colors = {
+					info = { "DiagnosticInfo", "#FF00FF" }
 				}
 			})
 		end,
 	},
-
 
 	-- Colorschemes
 	"folke/tokyonight.nvim",
@@ -50,7 +57,9 @@ plugins.config.plugins = {
 
 -- Add more options if you want
 plugins.config.lazy_config = {
-	lazy = true, -- Lazy load plugins (Load plugins after nvim open)
+	defaults = {
+		lazy = false, -- Lazy load plugins (Load plugins after nvim open)
+	}
 }
 
 
@@ -70,7 +79,8 @@ require("user.config.lualine")
 require("user.config.whichkey")
 
 -- Use colorscheme
--- Add a second argument for background opacity (e.g. setColorScheme(colorscheme, 80))
+-- INFO -- Add a second argument for background opacity (e.g. setColorScheme(colorscheme, 80))
+--
 -- If termgui is enabled, opacity is set by terminal
-require("user.colorscheme").setColorScheme(colorscheme, 80)
+require("user.colorscheme").setColorScheme(colorscheme)
 

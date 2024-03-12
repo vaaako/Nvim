@@ -80,18 +80,15 @@ local lock_plugins = {
 	-- Treesiter
 	"p00f/nvim-ts-rainbow",
 
-
+	-- Customization
 	"JoosepAlviste/nvim-ts-context-commentstring", -- What comment use based on context (for files with two comments)
 	"akinsho/toggleterm.nvim",                     -- Crtrl + / Opens terminal
 	"nvim-lualine/lualine.nvim",                   -- Better bottom line
-
+	"terryma/vim-multiple-cursors",                -- Multiple cursors like sublime
 
 	{
 		"folke/which-key.nvim", -- Show leader commands
 		event = "VeryLazy",
-		-- config = function()
-		-- 	require("which-key").setup()
-		-- end
 	},
 	{
 		"nvim-tree/nvim-tree.lua", -- Nerdtree
@@ -131,7 +128,7 @@ local lock_plugins = {
 		end
 	},
 	{
-		"numToStr/Comment.nvim",   -- Comment (keymap: gcc)
+		"numToStr/Comment.nvim", -- Comment (keymap: gcc)
 		config = function()
 			require("Comment").setup()
 		end

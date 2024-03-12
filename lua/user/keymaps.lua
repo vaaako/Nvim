@@ -45,14 +45,11 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Tabline --
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>q", ":bdelete<cr>", opts) -- Quit
 
 -- If you want to barbar.nvim
--- keymap("n", "<leader>q", ":BufferClose<cr>", opts) -- Quit
--- keymap("n", "<leader>br", ":BufferRestore<cr>", opts)
--- keymap("n", "<leader>bq", ":BufferClose<cr>", opts) -- Quit
 keymap("n", "<leader>bn", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<leader>bp", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<leader>bf", ":BufferLineTogglePin<CR>", opts) -- Pin
@@ -61,7 +58,9 @@ keymap("n", "<leader>bf", ":BufferLineTogglePin<CR>", opts) -- Pin
 -- Telescope --
 keymap("n", "<leader>fp", ":Telescope find_files<CR>", opts) -- With preview
 keymap("n", "<leader>ff", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<CR>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fa", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fs", ":Telescope current_buffer_fuzzy_find<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers", opts)
 
 
 

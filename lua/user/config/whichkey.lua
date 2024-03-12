@@ -8,9 +8,12 @@ local mappings = {
 	q = "Close Buffer",
 
 	f = {
-		name = "+file",                 -- Group name
-		f    = "Find File",              -- Create a binding with label
-		p    = "Find file with preview", -- Create just a label
+		name = "+file",                  -- Group name
+		b    = "Search opened tabs",
+		f    = "Find sile",
+		p    = "Find file with preview",
+		s    = "Search string in file",
+		a    = "Serch string in all files"
 		-- r = "Open Recent File",
 	},
 

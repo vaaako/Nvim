@@ -24,6 +24,7 @@ Uses **Lazy** for plugin manager along with various plugins such as **LSP**,
 - Neovim
 - Git
 - Some [Nerd Font](https://www.nerdfonts.com/)
+- `RipGrep` if you meant to search for string with `Telescope`
 
 
 ## Install
@@ -70,6 +71,17 @@ You can also press a keybind *(e.g. `g`)*, wait a bit, and see all possible keyb
 - **TAB**: Progresses to the next snippet location *(after selection a snippet)*
 	+  In snippet window acts like **Ctrl + j**
 - **Ctrl + Space**: Forces completion window to show up
+
+## Multicursor
+- **Ctrl + n**: Starts a *virtual cursor* to the word under the cursor or the selected word
+    + **Ctrl + n**: Again to go to the next selection
+- **Ctrl + x**: Skip the next match
+- **Ctrl + p**: Remoe current *virtual cursor* and got back to the previous
+- **Alt + a**: Select all matches
+
+Then you can press `c`, `s`, `v`, `I` or `A` to start some mode
+
+Select multiple lines and press **Ctrl + n** to start a *visual cursor* on each line
 
 ## Miscellaneous
 - **gf**: Navigates to a directory
