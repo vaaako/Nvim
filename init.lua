@@ -2,6 +2,7 @@ require("user.options")
 require("user.keymaps")
 require("user.colorscheme")
 
+-- [!] Change colorscheme here
 local colorscheme = "dracula"
 
 local plugins = require("user.plugins")
@@ -20,26 +21,69 @@ plugins.config.plugins = {
 
 	-- WARNING -- This plugins slows the loading time
 	{
-		"folke/todo-comments.nvim", -- Highlight TODO, WARNING, FIXME etc
+		"folke/todo-comments.nvim", -- Highlight comment words
 		event = "VeryLazy",
+
 		dependencies = "nvim-lua/plenary.nvim",
 		config = function()
 			require("todo-comments").setup({
-				highlight = {
-					-- pattern = [[.*<(KEYWORDS)\s*:]] -- Match: " KEYWORD: "
+				signs = true, -- Show signs,
+
+				-- WARNING -- Some colorschemes may affect this
+	 			highlight = {
+					multiline = true,
 					pattern = [[.*<(KEYWORDS)\s*]]   -- Match: " KEYWORD "
 				},
 
+				keywords = {
+					TODO = { icon = " ", color = "default" },
+				},
+
 				colors = {
-					info = { "DiagnosticInfo", "#FF00FF" }
-				}
+					error   = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+					warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+					info    = { "DiagnosticInfo", "#2563EB" },
+					hint    = { "DiagnosticHint", "#10B981" },
+					default = { "Identifier", "#7C3AED" },
+					test    = { "Identifier", "#FF00FF" }
+				},
 			})
 		end,
+	},
+
+	-- Sometimes works, sometimes not
+	{
+		"andweeb/presence.nvim", -- Discord RPC
+		event = "VeryLazy",
+
+		config = function()
+			require("presence").setup({
+				auto_update = true,
+				client_id   = "793271441293967371", -- WARNING -- Not your discord user ID, don't change
+				log_level = "debug",
+
+				main_image          = "file",
+				buttons             = false,
+				enabled_line_number = true,
+
+				editing_text        = "Editing %s",
+				file_explorer_text  = "Browsing %s",
+				reading_text        = "Reading %s",
+				workspace_text      = "Working on %s",
+				line_number_text    = "Line %s out of %s",
+
+				git_commit_text     = "Committing changes",
+				plugin_manager_text = "Managing plugins"
+			})
+		end
 	},
 
 	-- Colorschemes
 	"folke/tokyonight.nvim",
 	"Mofiqul/dracula.nvim"
+
+
+	-- INFO -- Config other plugins
 
 	-- Lazy
 	-- Updating plugins: Press "<leader>pu"
@@ -79,8 +123,7 @@ require("user.config.lualine")
 require("user.config.whichkey")
 
 -- Use colorscheme
--- INFO -- Add a second argument for background opacity (e.g. setColorScheme(colorscheme, 80))
---
+-- Add a second argument for background opacity (e.g. setColorScheme(colorscheme, 80))
 -- If termgui is enabled, opacity is set by terminal
-require("user.colorscheme").setColorScheme(colorscheme)
+require("user.colorscheme").setColorScheme(colorscheme, 80)
 
