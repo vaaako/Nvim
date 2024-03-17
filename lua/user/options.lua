@@ -52,7 +52,7 @@ local opt_lock_options = {
 	wrap           = false, -- Wrap text
 	signcolumn     = "yes", -- Always show the sign column
 	conceallevel   = 0,     -- `` visible on markdown
-	termguicolors  = true,  -- Use terminal colors
+	termguicolors  = false,  -- Use terminal colors
 
 	-- e.g. listchars = { eol = "$", tab = ">~", space = "·", extends = "#" },
 	listchars = { tab = ">—", space = "·", extends = "#" },
