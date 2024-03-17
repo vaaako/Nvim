@@ -29,16 +29,17 @@ plugins.config.plugins = {
 			require("todo-comments").setup({
 				signs = true, -- Show signs,
 
-				-- WARNING -- Some colorschemes may affect this
 	 			highlight = {
 					multiline = true,
 					pattern = [[.*<(KEYWORDS)\s*]]   -- Match: " KEYWORD "
 				},
 
+				-- INFO -- Some colorschemes may affectcolors
 				keywords = {
 					TODO = { icon = " ", color = "default" },
 				},
 
+				-- INFO -- If termgui is enabled, terminal colors will be used instead
 				colors = {
 					error   = { "DiagnosticError", "ErrorMsg", "#DC2626" },
 					warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
@@ -54,17 +55,16 @@ plugins.config.plugins = {
 	-- Sometimes works, sometimes not
 	{
 		"andweeb/presence.nvim", -- Discord RPC
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 
 		config = function()
 			require("presence").setup({
 				auto_update = true,
-				client_id   = "793271441293967371", -- WARNING -- Not your discord user ID, don't change
-				log_level = "debug",
+				-- log_level = "debug",
 
 				main_image          = "file",
 				buttons             = false,
-				enabled_line_number = true,
+				-- enabled_line_number = true,
 
 				editing_text        = "Editing %s",
 				file_explorer_text  = "Browsing %s",
@@ -80,8 +80,8 @@ plugins.config.plugins = {
 
 	-- Colorschemes
 	"folke/tokyonight.nvim",
-	"Mofiqul/dracula.nvim"
-
+	"Mofiqul/dracula.nvim",
+	"catppuccin/nvim"
 
 	-- INFO -- Config other plugins
 
@@ -115,15 +115,16 @@ plugins.sync_plugins()
 -- Plugins configs
 require("user.cmp")
 require("user.lsp") -- Credits: https://github.com/LunarVim/Neovim-from-scratch
+require("user.config.bufferline")
+require("user.config.lualine")
+require("user.config.nvimtree")
 require("user.config.telescope")
 require("user.config.treesitter")
 require("user.config.toggleterm")
-require("user.config.bufferline")
-require("user.config.lualine")
 require("user.config.whichkey")
 
 -- Use colorscheme
 -- Add a second argument for background opacity (e.g. setColorScheme(colorscheme, 80))
--- If termgui is enabled, opacity is set by terminal
+-- INFO -- If termgui is enabled, opacity is set by terminal
 require("user.colorscheme").setColorScheme(colorscheme, 80)
 

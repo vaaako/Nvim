@@ -92,22 +92,6 @@ local lock_plugins = {
 	},
 	{
 		"nvim-tree/nvim-tree.lua", -- Nerdtree
-		config = function()
-			require("nvim-tree").setup({
-				sort = {
-					sorter = "case_sensitive"
-				},
-
-				view = {
-					width = 25,
-				},
-
-				-- Show dotfiles
-				filters = {
-					dotfiles = false
-				}
-			})
-		end
 	},
 	{
 		"m4xshen/autoclose.nvim", -- Autoclose (), {}, "" etc
