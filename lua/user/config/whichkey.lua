@@ -2,7 +2,15 @@ local wk = require("which-key")
 
 local mappings = {
 	e = "Browse Files",
-	t = "Open Horizontal Terminal",
+	h = "Open Horizontal Terminal",
+
+	t = {
+		name = "+tabident",
+		["2"] = "2 spaces ident",
+		["3"] = "3 spaces ident",
+		["4"] = "4 spaces ident",
+		e = "Every 2 spaces to Tab"
+	},
 
 	w = "Save Buffer",
 	q = "Close Buffer",

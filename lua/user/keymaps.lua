@@ -63,6 +63,15 @@ keymap("n", "<leader>fs", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers", opts)
 
 
+-- Terminal --
+-- keymap("n", "<leader>t", ":terminal<cr>", opts)
+keymap("n", "<leader>h", ":ToggleTerm direction=horizontal size=10<CR>", opts)
+
+-- Tab ident --
+keymap("n", "<leader>t2", ":%s/^  /	/g", opts)
+keymap("n", "<leader>t3", ":%s/^   /	/g", opts)
+keymap("n", "<leader>t4", ":%s/^    /	/g", opts)
+keymap("n", "<leader>te", ":%s/  /	/g", opts)
 
 
 
@@ -88,13 +97,6 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
-
-
-
--- Terminal --
--- keymap("n", "<leader>t", ":terminal<cr>", opts)
-keymap("n", "<leader>t", ":ToggleTerm direction=horizontal size=10<CR>", opts)
 
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
