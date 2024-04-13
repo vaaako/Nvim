@@ -15,7 +15,17 @@ plugins.config.plugins = {
 		"kylechui/nvim-surround",
 		version = "*",
 		config = function()
-			require("nvim-surround").setup()
+			require("nvim-surround").setup({
+				surrounds = {
+					-- Bold, for markdown
+					-- This replace default B {}
+					["s"] = {
+						add = function()
+							return { { "**" }, { "**" } }
+						end
+					}
+				}
+			})
 		end
 	},
 
@@ -55,7 +65,7 @@ plugins.config.plugins = {
 	-- Sometimes works, sometimes not
 	{
 		"andweeb/presence.nvim", -- Discord RPC
-		-- event = "VeryLazy",
+		event = "VeryLazy",
 
 		config = function()
 			require("presence").setup({

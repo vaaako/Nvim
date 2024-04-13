@@ -7,7 +7,7 @@ treesitter.setup({
 	-- ensure_installed = "maintainers", -- "all" For all langues, "maintained" For parsers with maintainers
 
 	-- Add more servers here, search with :TSInstallInfo
-	ensure_installed = { "c", "cpp", "java", "lua", "python", "typescript", "javascript","markdown"},
+	ensure_installed = { "c", "cpp", "java", "lua", "ruby", "python", "typescript", "html", "css", "javascript", "markdown"},
 
 	sync_install = false, -- Install languages synchronously (only applied to "ensure_installed")
 	ignore_install = { "" }, -- List of parsers to ignore installing

@@ -64,8 +64,10 @@ local opt_lock_options = {
 }
 
 local g_lock_options = {
-	-- Ignore python style (ident)
-	python_recommended_style = 0
+	-- Ignore styles (ident)
+	python_recommended_style = 0,
+	ruby_recommended_style = 0,
+	markdown_recommended_style = 0
 }
 
 
