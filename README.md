@@ -24,7 +24,7 @@ Uses **Lazy** for plugin manager along with various plugins such as **LSP**,
 - Neovim
 - Git
 - Some [Nerd Font](https://www.nerdfonts.com/)
-- `RipGrep` if you meant to search for string with `Telescope`
+- `RipGrep` if you want to search for strings with `Telescope`
 
 
 ## Install
@@ -48,7 +48,7 @@ Plugins should start to install when opening **Neovim**
 
 ## Uninstall
 ```sh
-rm -rf ~/.config/nvim	  # Remove configs
+rm -rf ~/.config/nvim      # Remove configs
 rm -rf ~/.local/share/nvim # Remove plugins
 ```
 
@@ -56,9 +56,9 @@ rm -rf ~/.local/share/nvim # Remove plugins
 # Controls
 Leader key: **Space**
 
-These are not all the commands, just the basic ones
+You can easily view the commands by pressing a key and waiting a bit *(including the leader key)*
 
-You can also press a keybind *(e.g. `g`)*, wait a bit, and see all possible keybinds like `gl`, `gD` etc.
+These are not all the commands, just the basic ones
 
 ## Completion Navigation
 - **Enter**: Confirms selection
@@ -68,7 +68,7 @@ You can also press a keybind *(e.g. `g`)*, wait a bit, and see all possible keyb
 - **Shift + Tab**: Moves selection upward
 	+ Same as **Ctrl + k**
 
-- **TAB**: Progresses to the next snippet location *(after selection a snippet)*
+- **TAB**: Progresses to the next snippet location *(after selecting a snippet)*
 	+  In snippet window acts like **Ctrl + j**
 - **Ctrl + Space**: Forces completion window to show up
 
@@ -76,7 +76,7 @@ You can also press a keybind *(e.g. `g`)*, wait a bit, and see all possible keyb
 - **Ctrl + n**: Starts a *virtual cursor* to the word under the cursor or the selected word
     + **Ctrl + n**: Again to go to the next selection
 - **Ctrl + x**: Skip the next match
-- **Ctrl + p**: Remoe current *virtual cursor* and got back to the previous
+- **Ctrl + p**: Remove current *virtual cursor* and got back to the previous
 - **Alt + a**: Select all matches
 
 Then you can press `c`, `s`, `v`, `I` or `A` to start some mode
@@ -90,18 +90,11 @@ Select multiple lines and press **Ctrl + n** to start a *visual cursor* on each 
 - **Ctrl + /**: Opens a terminal inside **neovim**
 
 ## LSP
-- **gl**: Show line full error message
-- **gf**: Go to the file of the file path under cursor
-- **gD**: Go to the method/object declaration under the cursor
+- **gl**: Show full error message
+- **gf**: Open the file of the file path under cursor
+- **gD**: Open the file of the method/object declaration under the cursor
 - **Shift + K**: Show information of a method/object under cursor
 
-## Leader
-Youo can see all *Leader Commands* by pressing `<leader>` and waiting a bit
-
-
->Buffer is a tab
-
-For additional shortcuts, refer to `keymap.lua`.
 
 # Custom Configuration
 Configuration files reside in `~/.config/nvim`, with every file located in the `lua/user` directory
@@ -114,17 +107,18 @@ Specify key mappings in `keymap.lua`
 Set **Neovim** options
 
 ## Colorscheme
-To alter the colorscheme, modify in `init.lua` *(last lines)*
+To change the colorscheme, modify on `init.lua` *(last lines)*
 
 ## LSP
-To add a new server, add to `lua/user/lsp/mason.lua`, and if you want to add a config file,
- add to `lua/user/lsp/settings`
-
-Alternativally you can run the command: `:MasonInstall <servername>` or
+You can download a new server by running the command: `:MasonInstall <servername>` or
  opening **Mason** with the command: `:Mason` and pressing `Shift + I` to install the desired
  server *(`Shift + X` to uninstall)*
 
-You can see all server names with the command `:Mason`
+Alternativally you can add the server name to `lua/user/lsp/mason.lua` and updating `Mason`
+
+If you want to add a config file, add to `lua/user/lsp/settings`, the file must have the same name as the server
+
+You can see all server names with the command `:Mason`. Be aware some servers's *"true name"* are the gray name on the right of the server's name
 
 ## Treesitter
 Add a new language to `lua/user/config/treesitter.lua` or with the command: `TSIntall <language>`
@@ -140,7 +134,7 @@ For plugin configuration, utilize the following format:
 require("author/plugin_name")
 ```
 
-But some plugins are required to import to work
+But some plugins are required to use a *setup* to work
 
 ```lua
 {
@@ -152,7 +146,6 @@ But some plugins are required to import to work
 	end
 }
 ```
-
 
 If the plugin configurations is too long, you can make a *plugin config file* in `lua/user/configs/`,
  add your plugin file and move all inside `config = function() ... end` to it
@@ -178,4 +171,4 @@ plugin_name.setup({
 # Credits
 Made by me
 
-[Neovim from Scratch](https://github.com/LunarVim/Neovim-from-scratch/) inspired to start
+Inspired by: [Neovim from Scratch](https://github.com/LunarVim/Neovim-from-scratch/)
