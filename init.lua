@@ -9,11 +9,13 @@ local plugins = require("user.plugins")
 plugins.config.plugins = {
 	{
 		"xiyaowong/nvim-cursorword", -- Highlight match words under cursor
+		lazy = false -- Need to load on startup to work
 	},
 
 	{
 		"kylechui/nvim-surround",
 		version = "*",
+		lazy = false, -- Need to load on startup to work
 		config = function()
 			require("nvim-surround").setup({
 				surrounds = {
@@ -112,7 +114,9 @@ plugins.config.plugins = {
 -- Add more options if you want
 plugins.config.lazy_config = {
 	defaults = {
-		lazy = false, -- Lazy load plugins (Load plugins after nvim open)
+		lazy = true, -- Load plugins just after nvim opens
+					 -- Significally increases startup time
+					 -- Some plugins may not work with this option enabled
 	}
 }
 
