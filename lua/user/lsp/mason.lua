@@ -4,9 +4,9 @@ local servers = {
 	"pyright",
 	"tsserver",
 	"jdtls",
-	"ruby_ls"
-	-- "html",
-	-- "cssls",
+	"ruby_lsp",
+	"html",
+	"cssls",
 }
 
 

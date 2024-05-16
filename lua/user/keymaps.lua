@@ -15,9 +15,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
-
-
 -- Normal --
 -- Better window navigation -> Ctrl+[hjkl] to move between splits
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -68,10 +65,10 @@ keymap("n", "<leader>fb", ":Telescope buffers", opts)
 keymap("n", "<leader>h", ":ToggleTerm direction=horizontal size=10<CR>", opts)
 
 -- Tab ident --
-keymap("n", "<leader>t2", ":%s/^  /	/g", opts)
-keymap("n", "<leader>t3", ":%s/^   /	/g", opts)
-keymap("n", "<leader>t4", ":%s/^    /	/g", opts)
-keymap("n", "<leader>te", ":%s/  /	/g", opts)
+keymap("n", "<leader>t2", ":%s/^  /	/g<CR>", opts)
+keymap("n", "<leader>t3", ":%s/^   /	/g<CR>", opts)
+keymap("n", "<leader>t4", ":%s/^    /	/g<CR>", opts)
+keymap("n", "<leader>ta", ":%s/  /	/g<CR>", opts)
 
 
 
