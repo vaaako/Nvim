@@ -14,25 +14,12 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 
 	print("Installing Lazy.nvim close and reopen Neovim...")
-	vim.cmd([[packadd packer.nvim]])
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Sync pakcer whenever write init.lua (The change can be an added/removed plugin)
--- vim.cmd([[
---   augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost init.lua source <afile> | PackerSync
---   augroup end
--- ]])
--- autocmd BufWritePost plugins.lua source <afile> | PackerSync
-
-
--- If you do some change here, run :PackerSync
 local lock_plugins = {
 	-- Necessary Plugins
 	-- WARNING: Don't delete any of the plugins below
-	"wbthomason/packer.nvim",      -- Have packer manage itself
 	"nvim-lua/popup.nvim",         -- An implementation of the Popup API from vim in Neovim
 	"nvim-lua/plenary.nvim",       -- Useful lua functions used ny lots of plugins
 	"nvim-tree/nvim-web-devicons", -- Tabline icons
@@ -73,46 +60,66 @@ local lock_plugins = {
 	-- Tabline
 	"akinsho/bufferline.nvim", -- Tabline
 	"lewis6991/gitsigns.nvim", -- Tabline git status
-	-- I don't like barbar.nvim because of the blank file it creates
-	-- "romgrk/barbar.nvim",          -- Tabline
-	-- Fot tab options see: https://github.com/romgrk/barbar.nvim
 
 	-- Treesiter
 	"p00f/nvim-ts-rainbow",
 
 	-- Customization
-	"JoosepAlviste/nvim-ts-context-commentstring", -- What comment use based on context (for files with two comments)
-	"akinsho/toggleterm.nvim",                     -- Crtrl + / Opens terminal
+	"JoosepAlviste/nvim-ts-context-commentstring", -- Treesiter: What type of comment use depending based on cursor the cursor location (some files have two types of comment, like HTML)
+	"akinsho/toggleterm.nvim",                     -- Floating terminal (keymap: Ctrl + /)
 	"nvim-lualine/lualine.nvim",                   -- Better bottom line
-	"terryma/vim-multiple-cursors",                -- Multiple cursors like sublime
 
+	-- Multiple cursors like sublime
 	{
-		"folke/which-key.nvim", -- Show leader commands
-		event = "VeryLazy",
+		"terryma/vim-multiple-cursors",
+		lazy = false
 	},
+
+	-- Show leader commands
 	{
-		"nvim-tree/nvim-tree.lua", -- Nerdtree
+		"folke/which-key.nvim",
 	},
+
+	-- File navigation
 	{
-		"m4xshen/autoclose.nvim", -- Autoclose (), {}, "" etc
+		"nvim-tree/nvim-tree.lua",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons"
+		}
+	},
+
+	-- Autoclose (), {}, "" etc
+	{
+		"m4xshen/autoclose.nvim",
+		lazy = false,
 		config = function()
 			require("autoclose").setup()
 		end
 	},
+
+	-- Highlight colors like #CA1773
 	{
-		"NvChad/nvim-colorizer.lua", -- Highlight colors like #CA1773
+		"NvChad/nvim-colorizer.lua",
+		lazy = false,
 		config = function()
 			require("colorizer").setup()
 		end
 	},
+
+	-- Highlight yank
 	{
-		"gbprod/yanky.nvim", -- Highlight yank
+		"gbprod/yanky.nvim",
+		lazy = false,
 		config = function()
 			require("yanky").setup()
 		end
 	},
+
+	-- Comment (keymap: gcc)
 	{
-		"numToStr/Comment.nvim", -- Comment (keymap: gcc)
+		"numToStr/Comment.nvim",
+		lazy = false,
 		config = function()
 			require("Comment").setup()
 		end
