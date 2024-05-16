@@ -7,8 +7,9 @@ local colorscheme = "dracula"
 
 local plugins = require("user.plugins")
 plugins.config.plugins = {
+	-- Highlight match words under cursor
 	{
-		"xiyaowong/nvim-cursorword", -- Highlight match words under cursor
+		"xiyaowong/nvim-cursorword",
 		lazy = false -- Need to load on startup to work
 	},
 
@@ -31,9 +32,9 @@ plugins.config.plugins = {
 		end
 	},
 
-	-- WARNING -- This plugins slows the loading time
+	---- Highlight comment words
 	{
-		"folke/todo-comments.nvim", -- Highlight comment words
+		"folke/todo-comments.nvim",
 		event = "VeryLazy",
 
 		dependencies = "nvim-lua/plenary.nvim",
@@ -64,9 +65,9 @@ plugins.config.plugins = {
 		end,
 	},
 
-	-- Sometimes works, sometimes not
+	-- Discord RPC
 	{
-		"andweeb/presence.nvim", -- Discord RPC
+		"andweeb/presence.nvim", -- Sometimes works, sometimes not
 		event = "VeryLazy",
 
 		config = function()
