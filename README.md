@@ -38,7 +38,7 @@ rm -rf ~/.config/nvim/*
 
 Now run the command
 ```sh
-git clone https://github.com/vaaako/Nvim ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/vaaako/Nvim ~/.config/nvim && nvim
 ```
 
 Plugins should start to install when opening **Neovim**
