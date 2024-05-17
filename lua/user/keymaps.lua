@@ -27,19 +27,26 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts) -- Open File explorer
 
 keymap("n", "<leader>w", ":w<cr>", opts) -- Save
 keymap("n", "<C-Enter>", ":exit<cr>", opts) -- Save and Exit file
--- keymap("n", "<leader>qq", ":qq<cr>", opts) -- Quit
-
-keymap("n", "<leader>rs", ":nohlsearch<cr>", opts) -- Remove selection after search
-
--- Splits --
-keymap("n", "<leader>sh", ":split h<cr>", opts)
-keymap("n", "<leader>sv", ":vsplit<cr>", opts)
 
 -- Resize with arrows -> Resize splits
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+
+
+
+-- Actions --
+keymap("n", "<leader>rs", ":nohlsearch<cr>", opts) -- Remove selection after search
+
+-- nvim-silicon
+keymap("n", "<leader>ds", ":Silicon<CR>", opts)
+keymap("v", "<leader>ds", ":Silicon<CR>", opts)
+
+
+-- Splits --
+keymap("n", "<leader>sh", ":split h<cr>", opts)
+keymap("n", "<leader>sv", ":vsplit<cr>", opts)
 
 -- Tabline --
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)

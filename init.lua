@@ -7,10 +7,46 @@ local colorscheme = "dracula"
 
 local plugins = require("user.plugins")
 plugins.config.plugins = {
-	-- Highlight match words under cursor
 	{
-		"xiyaowong/nvim-cursorword",
-		lazy = false -- Need to load on startup to work
+		"jdonaldson/vaxe",
+		config = function()
+			require("vaxe").setup()
+		end
+	},
+
+	-- Markdown preview
+	{
+		"iamcco/markdown-preview.nvim",
+		event = 'VeryLazy',
+		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		ft = "markdown", -- Enable only in markdown files
+		build = function() vim.fn["mkdp#util#install"]() end
+	},
+
+	-- Updating symbol usages when renaming or moving a file in nvim-tree
+	{
+		'simaxme/java.nvim',
+		event = 'VeryLazy',
+		ft = "java",
+		config = function()
+			require("java").setup()
+		end
+	},
+
+	{
+		"michaelrommel/nvim-silicon",
+		event = 'VeryLazy',
+		cmd = "Silicon",
+		config = function()
+			require("silicon").setup({
+				font = "JetBrainsMonoNL Nerd Font=34; Noto Color Emoji=34",
+				theme = "Dracula", -- Run "silicon --help" on terminal to view more themes
+				window_title = function()
+					return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf()), ':t')
+				end
+			})
+		end
+		-- sudo pacman -S silicon
 	},
 
 	{

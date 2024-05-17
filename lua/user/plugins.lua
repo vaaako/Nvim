@@ -69,6 +69,12 @@ local lock_plugins = {
 	"akinsho/toggleterm.nvim",                     -- Floating terminal (keymap: Ctrl + /)
 	"nvim-lualine/lualine.nvim",                   -- Better bottom line
 
+	-- Highlight matching words under cursor
+	{
+		"xiyaowong/nvim-cursorword",
+		lazy = false -- Need to load on startup to work
+	},
+
 	-- Multiple cursors like sublime
 	{
 		"terryma/vim-multiple-cursors",

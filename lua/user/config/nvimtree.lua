@@ -1,27 +1,46 @@
-local status_ok, nvimtree = pcall(require, "nvim-tree")
+	local status_ok, nvimtree = pcall(require, "nvim-tree")
 if not status_ok then
 	return
 end
 
 
--- local function on_attach(bufnr)
--- 	local api = require("nvim-tree.api")
---
--- 	local function opts(desc)
--- 		return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
--- 	end
---
---
--- 	-- local function api_examples()
--- 	-- 	-- local node = api.tree.get_node_under_cursor()
--- 	-- 	-- local is_folder = node.fs_stat and node.fs_stat.type == 'directory' or false
--- 	-- 	-- Just to remember if someday i need it
--- 	-- 	-- node.nodes ~= nil -> folder -> else -> file
--- 	-- end
---
--- 	vim.keymap.set('n', '?', api.diagnostics.hi_test, opts('Edit'))
--- end
+local function on_attach(bufnr)
+	local api = require("nvim-tree.api")
 
+	local function opts(desc)
+		return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+	end
+
+
+	local function get_extension(path)
+		return path:match("^.+(%..+)$")
+	end
+
+	local function is_valid(ext)
+		return ext == ".bmp" or ext == ".jpg" or ext == ".jpeg" or ext == '.png' or ext == '.gif'
+	end
+
+	-- This only works for kitty terminal
+	local function image_nvimtree()
+		local node = api.tree.get_node_under_cursor()
+		local path = node.absolute_path
+		local extension = get_extension(path)
+
+		-- If is file and is a valid extension
+		if not node.nodes and is_valid(extension) then
+			vim.api.nvim_command("silent !kitty -o allow_remote_control=true kitten @ launch --type=window kitten icat --hold " .. path)
+		else
+			print("No image preview for file " .. path)
+		end
+	end
+
+	-- Default mappings
+	api.config.mappings.default_on_attach(bufnr)
+
+	-- Custom mappings
+	vim.keymap.set('n', '?', api.diagnostics.hi_test, opts('Edit'))
+	vim.keymap.set('n', "<leader>p", image_nvimtree, opts('Image Preview'))
+end
 
 
 nvimtree.setup({
@@ -33,12 +52,6 @@ nvimtree.setup({
 		width = 25,
 		adaptive_size = true,
 		side = "left",
-		-- mappings = {
-		-- 	list = {
-		-- 		-- { key = "<cr>", cb: }
-		-- 		{ key = "v", action = "vsplit" },
-		-- 	}
-		-- }
 	},
 
 	filters = {
@@ -99,6 +112,6 @@ nvimtree.setup({
 
 
 	-- My custom keymaps
-	-- on_attach = on_attach
+	on_attach = on_attach
 })
 
