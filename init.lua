@@ -7,13 +7,6 @@ local colorscheme = "dracula"
 
 local plugins = require("user.plugins")
 plugins.config.plugins = {
-	{
-		"jdonaldson/vaxe",
-		config = function()
-			require("vaxe").setup()
-		end
-	},
-
 	-- Markdown preview
 	{
 		"iamcco/markdown-preview.nvim",
@@ -175,7 +168,7 @@ require("user.config.toggleterm")
 require("user.config.whichkey")
 
 -- Use colorscheme
--- Add a second argument for background opacity (e.g. setColorScheme(colorscheme, 80))
+-- Add a second argument for background opacity (e.g. set_colorscheme((colorscheme, 80))
 -- INFO -- If termgui is enabled, opacity is set by terminal
-require("user.colorscheme").setColorScheme(colorscheme, 80)
+require("user.colorscheme").set_colorscheme(colorscheme, 80)
 

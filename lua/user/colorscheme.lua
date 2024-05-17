@@ -1,9 +1,8 @@
--- Good default colorschemes: torte, slate
-local default_colorschmee = "slate"
-
-local function setColorScheme(colorscheme, bg_op)
+local function set_colorscheme(colorscheme, bg_op)
+	-- Good default colorschemes: torte, slate
+	-- Set colorscheme if the method is not executed on "init.lua"
 	if colorscheme == nil then -- No colorscheme provided
-		colorscheme = default_colorschmee -- Default colorscheme
+		colorscheme = "slate" -- Default colorscheme
 	end
 
 	-- Check if colorscheme exists
@@ -20,9 +19,6 @@ local function setColorScheme(colorscheme, bg_op)
 	end
 end
 
--- Set colorscheme if "setColorScheme" is not executed on "init.lua"
-setColorScheme(default_colorschmee)
-
 return {
-	setColorScheme = setColorScheme
+	set_colorscheme = set_colorscheme
 };
