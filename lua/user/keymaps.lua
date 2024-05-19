@@ -37,11 +37,15 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 
 -- Actions --
-keymap("n", "<leader>rs", ":nohlsearch<cr>", opts) -- Remove selection after search
+keymap("n", "<leader>ar", ":nohlsearch<cr>", opts) -- Remove selection after search
+
+-- Icon picker
+keymap("n", "<leader>ap", "<cmd>IconPickerNormal<CR>", opts)
+keymap("n", "<leader>ae", ":IconPickerInsert emoji<CR>", opts)
 
 -- nvim-silicon
-keymap("n", "<leader>ds", ":Silicon<CR>", opts)
-keymap("v", "<leader>ds", ":Silicon<CR>", opts)
+keymap("n", "<leader>as", ":Silicon<CR>", opts)
+keymap("v", "<leader>as", ":Silicon<CR>", opts)
 
 
 -- Splits --

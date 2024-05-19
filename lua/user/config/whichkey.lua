@@ -4,6 +4,14 @@ local mappings = {
 	e = "Browse Files",
 	h = "Open Horizontal Terminal",
 
+	a = {
+		name = "+actions",
+		p = "Icon picker",
+		e = "Emoji picker",
+		s = "Screenshot selection",
+		r = "Remove search selection"
+	},
+
 	t = {
 		name = "+tabident",
 		["2"] = "2 spaces ident",
