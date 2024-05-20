@@ -49,10 +49,11 @@ keymap("v", "<leader>as", ":Silicon<CR>", opts)
 
 
 -- Splits --
+keymap("n", "<leader>sc", ":close<cr>", opts)
 keymap("n", "<leader>sh", ":split h<cr>", opts)
 keymap("n", "<leader>sv", ":vsplit<cr>", opts)
 
--- Tabline --
+-- Tabline / Buffers --
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>q", ":bdelete<cr>", opts) -- Quit
@@ -80,9 +81,6 @@ keymap("n", "<leader>t2", ":%s/^  /	/g<CR>", opts)
 keymap("n", "<leader>t3", ":%s/^   /	/g<CR>", opts)
 keymap("n", "<leader>t4", ":%s/^    /	/g<CR>", opts)
 keymap("n", "<leader>ta", ":%s/  /	/g<CR>", opts)
-
-
-
 
 -- Insert --
 -- Press jk fast to exit insert mode

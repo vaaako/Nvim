@@ -24,7 +24,7 @@ local mappings = {
 	q = "Close Buffer",
 
 	f = {
-		name = "+file",                  -- Group name
+		name = "+file", -- Group name
 		b    = "Search opened tabs",
 		f    = "Find sile",
 		p    = "Find file with preview",
@@ -35,6 +35,7 @@ local mappings = {
 
 	s = {
 		name = "+split",
+		c    = "Close",
 		h    = "Horizontal",
 		v    = "Vertical"
 	},
@@ -52,7 +53,19 @@ local mappings = {
 	},
 
 	-- LSP Commands
-	["l"] = "which_key_ignore"
+	l = {
+		name = "+lsp",
+		a = "View all possible actions",
+		f = "Format",
+		i = "Current LSP info",
+		j = "Diagnostic go to next",
+		k = "Diagnostic go to prev",
+		q = "View all problems location",
+		r = "Rename symbol (e.g. namespace, macro)",
+		s = "Signature help"
+	}
+
+	-- "which_key_ignore"
 }
 
 local opts = { prefix = "<leader>" }

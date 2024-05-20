@@ -90,6 +90,8 @@ Select multiple lines in visual mode, and press `Ctrl + n` to start a *visual cu
 - `gf`: Open the file of the file path under cursor
 - `gD`: Open the file of the **method/object** declaration under the cursor
 - `Shift + K`: Show information of a **method/object** under cursor
+- `<leader> + q`: Use quick fix, when avaiable
+- `<leader> + a`: View all possible fixes
 
 
 # Custom Configuration
