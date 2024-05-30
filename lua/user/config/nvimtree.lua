@@ -60,13 +60,14 @@ nvimtree.setup({
 
 	git = {
 		enable = true,
+		ignore = false -- Don't hide .gitignore status
 	},
 
 
 	-- Show diagnostics
 	diagnostics = {
 		enable = true,
-		show_on_dirs = false,
+		show_on_dirs = true,
 		icons = {
 			hint = "",
 			info = "",

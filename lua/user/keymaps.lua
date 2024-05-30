@@ -59,8 +59,10 @@ keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<leader>q", ":bdelete<cr>", opts) -- Quit
 
 -- If you want to barbar.nvim
-keymap("n", "<leader>bn", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "<M-l>", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "<M-h>", ":BufferLineMovePrev<CR>", opts)
 keymap("n", "<leader>bp", ":BufferLineMovePrev<CR>", opts)
+keymap("n", "<leader>bn", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<leader>bf", ":BufferLineTogglePin<CR>", opts) -- Pin
 
 
