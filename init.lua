@@ -3,7 +3,7 @@ require("user.keymaps")
 require("user.colorscheme")
 
 -- [!] Change colorscheme here
-local colorscheme = "dracula"
+local colorscheme = "tokyonight-night"
 
 local plugins = require("user.plugins")
 plugins.config.plugins = {
@@ -88,10 +88,10 @@ plugins.config.plugins = {
 
 	 			highlight = {
 					multiline = true,
-					pattern = [[.*<(KEYWORDS)\s*]]   -- Match: " KEYWORD "
+					pattern = ".*(KEYWORDS)"   -- Match: " KEYWORD "
 				},
 
-				-- INFO -- Some colorschemes may affectcolors
+				-- INFO -- Some colorschemes may affec tcolors
 				keywords = {
 					TODO = { icon = " ", color = "default" },
 				},
@@ -184,6 +184,6 @@ require("user.config.whichkey")
 
 -- Use colorscheme
 -- Add a second argument for background opacity (e.g. set_colorscheme((colorscheme, 80))
--- INFO -- If termgui is enabled, opacity is set by terminal
+-- INFO -- If termgui on options.lua is enabled, opacity is set by terminal
 require("user.colorscheme").set_colorscheme(colorscheme, 80)
 

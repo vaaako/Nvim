@@ -15,7 +15,7 @@ local opt_lock_options = {
 	tabstop     = 4,       -- Size of spaces as tab
 	expandtab   = false,   -- Convert tab to space
 	smartindent = false,   -- Use file indent
-	autoindent  = false,
+	autoindent  = true,
 
 
 
@@ -67,7 +67,8 @@ local g_lock_options = {
 	-- Ignore styles (ident)
 	python_recommended_style = 0,
 	ruby_recommended_style = 0,
-	markdown_recommended_style = 0
+	markdown_recommended_style = 0,
+	php_recommended_style = 0
 }
 
 
