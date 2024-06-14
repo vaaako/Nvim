@@ -31,9 +31,9 @@ treesitter.setup({
 		disable = { "" }, -- List of language that will be disabled
 		additional_vim_regex_highlighting = true,
 	},
+
 	indent = {
 		enable = true,
-		-- disable = { "yaml" } -- Disabled auto indent
 	},
 
 	-- Enable rainbow parentheses

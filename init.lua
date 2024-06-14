@@ -26,6 +26,12 @@ plugins.config.plugins = {
 		end
 	},
 
+	{
+		'jwalton512/vim-blade',
+		event = 'VeryLazy',
+		ft = 'php'
+	},
+
 	-- Screenshot code
 	{
 		"michaelrommel/nvim-silicon",
