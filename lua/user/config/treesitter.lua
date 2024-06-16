@@ -12,6 +12,7 @@ treesitter.setup({
 		"markdown",
 		"c",
 		"cpp",
+		"glsl",
 		"java",
 
 		"typescript",

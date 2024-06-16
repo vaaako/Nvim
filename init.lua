@@ -94,7 +94,7 @@ plugins.config.plugins = {
 
 	 			highlight = {
 					multiline = true,
-					pattern = ".*(KEYWORDS)"   -- Match: " KEYWORD "
+					pattern = [[.*<(KEYWORDS)\s*]]   -- Match: " KEYWORD "
 				},
 
 				-- INFO -- Some colorschemes may affec tcolors
