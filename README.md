@@ -59,15 +59,12 @@ These are some of the most important commands
 
 ## Completion Navigation
 - `Enter`: Confirm selection
-- `Ctrl + [j | k]`: Moves up and down between snippets
 - `Ctrl + e`: Closes the snippet window
-
-- `Shift + Tab`: Moves selection upward
-	+ Same as `Ctrl + k`
-
 - `TAB`: Progresses to the next snippet location *(after selecting a snippet)*
 	+  In snippet window acts like `Ctrl + j`
 - `Ctrl + Space`: Forces completion window to show up
+- `Ctrl + [j | k]`: Moves up and down between snippets
+- `Ctrl + /`: Open a terminal inside **neovim**
 
 ## Multicursor
 - `Ctrl + n`: Starts a *virtual cursor* to the word under the cursor or the selected word
@@ -80,18 +77,13 @@ After selecting with multicursor, you can press `c`, `s`, `v`, `I` or `A` to sta
 
 Select multiple lines in visual mode, and press `Ctrl + n` to start a *visual cursor* splitted on each line
 
-## Miscellaneous
-- `gf`: Navigate to the directory location under the cursor
-- `Shift + K`: Show the definition of a function
-- `Ctrl + /`: Open a terminal inside **neovim**
-
 ## LSP
 - `gl`: Show full error message
 - `gf`: Open the file of the file path under cursor
 - `gD`: Open the file of the **method/object** declaration under the cursor
-- `Shift + K`: Show information of a **method/object** under cursor
+- `Shift + K`: Show definition of a **method/object** under cursor, press again to enter on the hint window
 - `<leader> + q`: Use quick fix, when avaiable
-- `<leader> + a`: View all possible fixes
+- `<leader> + l + q`: View all problems in file
 
 
 # Custom Configuration
@@ -111,6 +103,11 @@ You can see all server's names with the command `:Mason`. Be aware some servers'
 
 ## Treesitter
 Add a new language with the command: `TSIntall <language>` or adding to `lua/user/config/treesitter.lua`
+
+## Keymap and Whichkey
+You can change keymaps on `lua/user/keymaps.lua` and `lua/user/config/whichkey.lua`
+
+Use `keymaps.lua` to change common keymaps and `whichkey.lua` to change leader keymaps
 
 ## Plugins
 - Desired plugins can be added in `init.lua`

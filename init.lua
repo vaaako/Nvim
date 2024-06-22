@@ -34,11 +34,13 @@ plugins.config.plugins = {
 
 	-- Screenshot code
 	{
+		-- https://github.com/michaelrommel/nvim-silicon?tab=readme-ov-file#setup
 		"michaelrommel/nvim-silicon",
 		event = 'VeryLazy',
 		cmd = "Silicon",
 		config = function()
 			require("silicon").setup({
+				to_clipboard = false,
 				font = "JetBrainsMonoNL Nerd Font=34; Noto Color Emoji=34",
 				theme = "Dracula", -- Run "silicon --help" on terminal to view more themes
 				window_title = function()

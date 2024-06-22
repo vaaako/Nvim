@@ -69,6 +69,14 @@ local lock_plugins = {
 	"akinsho/toggleterm.nvim",                     -- Floating terminal (keymap: Ctrl + /)
 	"nvim-lualine/lualine.nvim",                   -- Better bottom line
 
+	-- HTML autopair
+	{
+		"windwp/nvim-ts-autotag",
+		-- require('nvim-ts-autotag').setup({
+		--
+		-- })
+	},
+
 	-- Highlight matching words under cursor
 	{
 		"xiyaowong/nvim-cursorword",

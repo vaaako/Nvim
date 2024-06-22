@@ -10,7 +10,8 @@ local servers = {
 
 	"html",
 	"cssls",
-	"phpactor"
+	"intelephense"
+	-- "phpactor"
 }
 
 
