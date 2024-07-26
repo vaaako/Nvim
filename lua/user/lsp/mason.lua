@@ -6,11 +6,10 @@ local servers = {
 	"tsserver",
 
 	"jdtls",
-	"ruby_lsp",
+	-- "ruby_lsp", -- Not using right now (not even work)
 
-	-- "html",
+	"html",
 	"cssls",
-	-- "intelephense"
 	"phpactor"
 }
 
