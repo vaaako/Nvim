@@ -26,11 +26,11 @@ treesitter.setup({
 	},
 
 	sync_install = false, -- Install languages synchronously (only applied to "ensure_installed")
-	ignore_install = { "" }, -- List of parsers to ignore installing
+	-- ignore_install = { "" }, -- List of parsers to ignore installing
 	highlight = {
-		enable = true, -- False will disable the whole extension
-		disable = { "" }, -- List of language that will be disabled
+		enable = true,
 		additional_vim_regex_highlighting = true,
+		-- disable = { "" }, -- List of language that will be disabled
 	},
 
 	indent = {

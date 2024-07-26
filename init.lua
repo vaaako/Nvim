@@ -60,7 +60,7 @@ plugins.config.plugins = {
 		},
 		config = function()
 			require("icon-picker").setup({ disable_legacy_commands = true })
-		 end
+		end
 	},
 
 
@@ -94,9 +94,9 @@ plugins.config.plugins = {
 			require("todo-comments").setup({
 				signs = true, -- Show signs,
 
-	 			highlight = {
+				highlight = {
 					multiline = true,
-					pattern = [[.*<(KEYWORDS)\s*]]   -- Match: " KEYWORD "
+					pattern = [[.*<(KEYWORDS)\s*]] -- Match: " KEYWORD "
 				},
 
 				-- INFO -- Some colorschemes may affec tcolors
@@ -124,7 +124,7 @@ plugins.config.plugins = {
 
 		config = function()
 			require("presence").setup({
-				auto_update = true,
+				auto_update         = true,
 				-- log_level = "debug",
 
 				main_image          = "file",
@@ -168,8 +168,8 @@ plugins.config.plugins = {
 plugins.config.lazy_config = {
 	defaults = {
 		lazy = true, -- Load plugins just after nvim opens
-					 -- Significally increases startup time
-					 -- Some plugins may not work with this option enabled
+		-- Significally increases startup time
+		-- Some plugins may not work with this option enabled
 	}
 }
 
@@ -194,4 +194,3 @@ require("user.config.whichkey")
 -- Add a second argument for background opacity (e.g. set_colorscheme((colorscheme, 80))
 -- INFO -- If termgui on options.lua is enabled, opacity is set by terminal
 require("user.colorscheme").set_colorscheme(colorscheme, 80)
-

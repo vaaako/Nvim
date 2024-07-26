@@ -8,10 +8,10 @@ local servers = {
 	"jdtls",
 	"ruby_lsp",
 
-	"html",
+	-- "html",
 	"cssls",
-	"intelephense"
-	-- "phpactor"
+	-- "intelephense"
+	"phpactor"
 }
 
 
