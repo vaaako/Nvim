@@ -1,8 +1,7 @@
 # Neovim Setup
 
 # About
-This is my basic `Neovim` setup, is **Lightweight**, **Customizable**, **Simple** and **Functional**,
- I don't need nothing more than this, is perfect for me
+This is my basic `Neovim` setup, is **Lightweight**, **Customizable** and **Simple**
 
 ## Some Plugins
 - Auto closing with [nvim-autopairs](https://github.com/windwp/nvim-autopairs)
@@ -31,14 +30,15 @@ First make a backup of your current **Neovim** config *(it will be deleted)*
 mv ~/.config/nvim ~/.config/nvim.bak
 ```
 
-Delete old **Neovim** folder
+Delete old **Neovim** setup
 ```sh
-rm -rf ~/.config/nvim/*
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
 ```
 
 Now run the command
 ```sh
-git clone https://github.com/vaaako/Nvim ~/.config/nvim && nvim
+git clone https://github.com/vaaako/nvim ~/.config/nvim && nvim
 ```
 
 Plugins should start to install when opening **Neovim**
