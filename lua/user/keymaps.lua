@@ -37,12 +37,6 @@ keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<M-l>", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "<M-h>", ":BufferLineMovePrev<CR>", opts)
 
--- Tab ident --
-keymap("n", "<leader>t2", ":%s/^  /	/g<CR>", opts)
-keymap("n", "<leader>t3", ":%s/^   /	/g<CR>", opts)
-keymap("n", "<leader>t4", ":%s/^    /	/g<CR>", opts)
-keymap("n", "<leader>ta", ":%s/  /	/g<CR>", opts)
-
 
 
 -- Insert --
