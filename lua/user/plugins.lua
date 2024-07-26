@@ -50,6 +50,9 @@ local lock_plugins = {
 	-- Better syntax highlight
 	{
 		"nvim-treesitter/nvim-treesitter",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects"
+		},
 		run = ":TSUpdate"
 	},
 

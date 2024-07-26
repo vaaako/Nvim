@@ -82,4 +82,7 @@ for k, v in pairs(g_lock_options) do
 end
 
 
+-- Enable html for blade files, since treesitter doesn't work
+-- This crashes neovim for some reason
+vim.treesitter.language.register("html", "blade")
 
